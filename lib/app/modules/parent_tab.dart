@@ -18,11 +18,6 @@ class _ParentTabState extends State<ParentTab> {
     const LogoutView(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,28 +26,28 @@ class _ParentTabState extends State<ParentTab> {
         children: _views,
       ),
       bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        indicatorColor: const Color(0xffE8DEF8),
-        selectedIndex: _selectedIndex,
-        destinations: const <Widget>[
-        NavigationDestination(
-          selectedIcon: Icon(Icons.home),
-          icon: Icon(Icons.stars),
-          label: 'Home',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.stars),
-          label: 'Akun',
-        ),
-          NavigationDestination(
-            icon: Icon(Icons.stars),
-            label: 'Logout',
-          ),
-      ]),
+          onDestinationSelected: (int index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          indicatorColor: const Color(0xffE8DEF8),
+          selectedIndex: _selectedIndex,
+          destinations: const <Widget>[
+            NavigationDestination(
+              selectedIcon: Icon(Icons.home),
+              icon: Icon(Icons.stars),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.stars),
+              label: 'Akun',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.stars),
+              label: 'Logout',
+            ),
+          ]),
     );
   }
 }

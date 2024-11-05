@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:responsi_satu/app/resources/palletes.dart';
 
 class WgButton extends StatelessWidget {

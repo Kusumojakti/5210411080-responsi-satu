@@ -7,6 +7,7 @@ class SplashScreenView extends StatefulWidget {
   const SplashScreenView({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SplashScreenViewState createState() => _SplashScreenViewState();
 }
 
@@ -20,7 +21,8 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   void startTimer() {
     var duration = const Duration(seconds: 5);
     Timer(duration, () {
-      Get.off(() => const LoginView()); // Replace the Splash screen with LoginView
+      Get.off(
+          () => const LoginView()); // Replace the Splash screen with LoginView
     });
   }
 
@@ -31,9 +33,11 @@ class _SplashScreenViewState extends State<SplashScreenView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/logo.png",
+            Image.asset(
+              "assets/images/logo.png",
               width: 252,
-              height: 96,),
+              height: 96,
+            ),
             const SizedBox(height: 20),
           ],
         ),
